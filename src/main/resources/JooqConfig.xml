@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- xmlns 命名空间配置 可以检索 jooq-codegen* 文件 参看 -->
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.13.0.xsd">
+    <jdbc>
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/cao_test?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
+        <user>root</user>
+        <password>root</password>
+    </jdbc>
+    <generator>
+        <!-- 代码生成器 -->
+        <name>org.jooq.codegen.JavaGenerator</name>
+        <database>
+
+            <unsignedTypes>false</unsignedTypes>
+
+            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+            <!--include和exclude用于控制为数据库中哪些表生成代码-->
+            <includes>.*</includes>
+            <!--数据库名称-->
+            <schemata>
+                <schema>
+                    <inputSchema>cao_test</inputSchema>
+                </schema>
+                <!-- 可以配置 多个数据库 -->
+<!--                <schema>-->
+<!--                    <inputSchema>secs_capital_test1</inputSchema>-->
+<!--                </schema>-->
+            </schemata>
+            <!-- 不生成 -->
+            <excludes>jd_custom_form_old_.*</excludes>
+        </database>
+        <generate>
+            <!--生成dao和pojo-->
+            <daos>true</daos>
+            <pojos>true</pojos>
+            <!--把数据库时间类型映射到java 8时间类型-->
+            <javaTimeTypes>true</javaTimeTypes>
+            <interfaces>true</interfaces>
+            <!--不在生成的代码中添加spring注释，比如@Repository-->
+            <springAnnotations>false</springAnnotations>
+        </generate>
+        <target>
+            <!--生成代码文件的包名及放置目录-->
+            <packageName>com.example.demo.jooqGenerator</packageName>
+            <directory>src/main/java</directory>
+        </target>
+    </generator>
+
+</configuration>
