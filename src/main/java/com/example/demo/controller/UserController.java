@@ -9,6 +9,7 @@ import com.example.demo.jooqGenerator.tables.records.TUserRecord;
 import com.example.demo.vo.UserVO;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,7 @@ public class UserController {
     @Autowired
     DSLContext dslContext;
 
+//    @PreAuthorize("hasAuthority('sys:user:add')")
     @RequestMapping("/add")
     public String test(){
         ArrayList<TUserRecord> tUserRecords = new ArrayList<>();
@@ -35,6 +37,7 @@ public class UserController {
         return "success";
     }
 
+    @PreAuthorize("hasAuthority('sys:user:view')")
     @RequestMapping("/list")
     public String list(){
         List<TUser> tUsers = dslContext.select().from(Tables.T_USER).fetchInto(TUser.class);

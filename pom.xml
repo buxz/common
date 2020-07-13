@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.2.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -19,7 +19,7 @@
     </properties>
 
     <dependencies>
-        <!-- <<< jooq -->
+        <!-- jooq -->
         <!-- starter依赖在 新建项目时选择 jooq  access layer 项 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,23 +33,20 @@
             <groupId>org.jooq</groupId>
             <artifactId>jooq-meta</artifactId>
         </dependency>
-        <!-- jooq >>>-->
 
-        <!-- <<< druid -->
+        <!-- druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>LATEST</version>
+            <version>RELEASE</version>
         </dependency>
-        <!-- druid >>> -->
 
-        <!-- <<< activiti-->
+        <!-- activiti-->
         <dependency>
             <groupId>org.activiti</groupId>
             <artifactId>activiti-spring-boot-starter-basic</artifactId>
             <version>5.22.0</version>
         </dependency>
-
         <!-- 在线设计器 -->
         <dependency>
             <groupId>org.activiti</groupId>
@@ -61,7 +58,21 @@
             <artifactId>activiti-diagram-rest</artifactId>
             <version>5.22.0</version>
         </dependency>
-        <!-- activiti >>> -->
+
+        <!-- spring security-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- jwt -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -70,7 +81,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>LATEST</version>
+            <version>1.18.12</version>
         </dependency>
 
 
